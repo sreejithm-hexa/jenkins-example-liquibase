@@ -6,12 +6,12 @@ pipeline {
   stages {
     stage('Status') {
       steps {
-        sh 'liquibase status --url="jdbc:mysql://3.22.94.239:3306/mjjs" --changeLogFile=my_app-wrapper.xml --username=$MYSQL_CREDS_USR --password=$MYSQL_CREDS_PSW'
+        sh '/opt/liquibase/liquibase status --url="jdbc:mysql://3.22.94.239:3306/mjjs" --changeLogFile=my_app-wrapper.xml --username=$MYSQL_CREDS_USR --password=$MYSQL_CREDS_PSW'
       }
     }
     stage('Update') {
       steps {
-        sh 'liquibase update --url="jdbc:mysql://3.22.94.239:3306/mjjs" --changeLogFile=my_app-wrapper.xml --username=$MYSQL_CREDS_USR --password=$MYSQL_CREDS_PSW'
+        sh '/opt/liquibase/liquibase update --url="jdbc:mysql://3.22.94.239:3306/mjjs" --changeLogFile=my_app-wrapper.xml --username=$MYSQL_CREDS_USR --password=$MYSQL_CREDS_PSW'
       }
     }
   }
