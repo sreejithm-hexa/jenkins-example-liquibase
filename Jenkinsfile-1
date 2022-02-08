@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Test1') {
+      steps {
+        sh 'cd /opt/liquibase'
+      }
+    }
     stage('Test') {
       steps {
         sh 'liquibase --version'
