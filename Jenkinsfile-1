@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh '/opt/liquibase/liquibase --version'
+        sh 'liquibase --version'
       }
     }
   }
