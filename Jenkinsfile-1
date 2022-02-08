@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
+        tool name: 'liquibase', type: 'org.jenkinsci.plugins.liquibase.install.LiquibaseInstallation'
         sh 'liquibase --version'
       }
     }
